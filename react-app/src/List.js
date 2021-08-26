@@ -7,7 +7,7 @@ export class List extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://universities.hipolabs.com/search?name=middle')
+        fetch('http://localhost:3000/countries')
         .then(response => response.json())
         .then(response => {
             this.setState({
@@ -24,10 +24,14 @@ export class List extends React.Component {
             <div>
                 {this.state.isLoading ? 'Data is loading' : (
                     this.state.data.map(el => (
-                        <div key={el.domains}>
+                        <div key={el.id}>
                             {el.name}
                             {' - '}
-                            {el.country}
+                            {el.intIdx}
+                            {' - '}
+                            {el.areaSqKm}
+                            {' - '}
+                            {el.mainlang}
                         </div>
                     ))
                 )}
