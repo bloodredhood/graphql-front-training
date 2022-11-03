@@ -7,7 +7,7 @@ const schema = require('./schema')
 const users = [
   {
     id: 1,
-    username: 'Vasya',
+    username: 'Nick',
     age: 25,
   }
 ]
